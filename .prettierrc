@@ -1,0 +1,8 @@
+{
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "[html]": { "editor.forma.formatOnSave": true },
+  "[css]": { "editor.formatOnSave": true }
+}
