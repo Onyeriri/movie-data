@@ -1,1 +1,242 @@
-/* css files here */
+/* 
+google fonts used in this project
+font-family: 'Anton', sans-serif; h1
+font-family: 'Dosis', sans-serif; p
+font-family: 'Noto Serif', serif; h2
+ */
+
+/* css reset */
+* {
+  box-sizing: border-box;
+}
+
+body,
+html,
+div,
+blockquote,
+img,
+label,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+form,
+a,
+fieldset,
+input,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  /* border: 0; */
+  outline: none;
+}
+
+body {
+  line-height: 1.5em;
+  font-size: 88%;
+  text-align: justify;
+  /* padding: 1em; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  padding: 0.6em 0;
+  text-transform: uppercase;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.floatLeft {
+  float: left;
+  padding: 0.5em 0.5em 0.5em 0;
+}
+
+.floatRight {
+  float: right;
+  padding: 0.5em 0 0.5em 0.5em;
+}
+
+/* individual page css rules */
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+header {
+  width: 100%;
+  background-color: #202a25;
+  color: #fff;
+  text-align: center;
+  margin: 1em 0 2em 0;
+  padding: 0 0 0.5em 0;
+}
+
+header h1 {
+  font-family: "Anton", sans-serif;
+  letter-spacing: 0.3em;
+  font-weight: 100;
+}
+
+header p {
+  font-family: "Dosis", sans-serif;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+}
+
+nav {
+  width: 100%;
+  background-color: red;
+  display: flex;
+  margin: 0 0 2em 0;
+  padding: 1em 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  margin: 0 0 1em 0;
+}
+
+.input-filed,
+.form-container form button,
+.btn {
+  padding: 0.5em;
+  border: 3px solid gold;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.btn {
+  margin: 0 0 0 -9em;
+  width: 10em;
+}
+
+.form-container form button {
+  margin: 0 0 0 0.5em;
+}
+
+section.add-section {
+  width: 100%;
+  background-color: greenyellow;
+  padding: 1em 0.2em;
+  border: 3px solid gold;
+  border-radius: 15px;
+  margin: 0 0 1em 0;
+}
+
+.cancel-container {
+  display: flex;
+  justify-content: end;
+  width: 95%;
+}
+
+.cancel {
+  color: #000;
+  cursor: pointer;
+}
+
+.cancel:hover {
+  color: red;
+}
+
+section .add-movie {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.add-movie input,
+.add-movie label {
+  display: block;
+}
+
+.add-movie input {
+  width: 100%;
+  border: 3px solid gold;
+  border-radius: 10px;
+}
+
+.add-movie button {
+  width: 60%;
+  margin: 1em 0 0 0;
+  border: 3px solid gold;
+  border-radius: 10px;
+  padding: 0.5em;
+  background-color: #fff;
+}
+
+.btn-container {
+  text-align: center;
+}
+
+.movie-list {
+  background-color: aquamarine;
+  border: 3px solid gold;
+  border-radius: 15px;
+  margin: 2em 0 0 0;
+  padding: 1em;
+}
+
+footer {
+  background-color: #202a25;
+  margin: 1em 0 0 0;
+}
+
+footer ul {
+  display: flex;
+  padding: 0.8em 0;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+
+footer > ul > li > a > i {
+  color: #fff;
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Extra small devices (phones, 600px and down) */
+/* @media only screen and (max-width: 600px) {...} */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* @media only screen and (min-width: 600px) {...} */
+
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {...} */
+
+/* Large devices (laptops/desktops, 992px and up) */
+/* @media only screen and (min-width: 992px) {...} */
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) {...} */
