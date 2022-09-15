@@ -26,9 +26,11 @@
       sizes="256x256"
       href="/favicon/favicon-32x32.png"
     />
+    <link rel="stylesheet" href="/css/styles.css" />
     <title>Movie Data</title>
   </head>
   <body>
+    <!-- main container -->
     <div class="container">
       <header>
         <h1>Movie Data</h1>
@@ -37,36 +39,49 @@
 
       <!-- navigation section of the code -->
       <nav>
-        <div>
+        <div class="form-container">
           <form action="">
-            <input type="text" name="title" id="title" placeholder="Title" />
+            <input
+              class="input-filed"
+              type="text"
+              name="title"
+              id="title"
+              placeholder="search movies by date"
+            />
             <button type="submit">search</button>
           </form>
-          <button>Add movies</button>
         </div>
+        <button class="btn">Add a movie</button>
       </nav>
 
       <!-- add more movies to the movie data store -->
-      <section>
-        <form action="">
-          <label for="title">Title</label>
+      <section class="add-section">
+        <div class="cancel-container">
+          <i class="cancel fa-solid fa-xmark fa-2x"></i>
+        </div>
+        <form class="add-movie" action="">
+          <label for="title">Title:</label>
           <input type="text" name="title" id="title" required />
-          <label for="cast">Cast</label>
+          <label for="cast">Cast:</label>
           <input type="text" name="cast" id="cast" required />
-          <label for="plot">Plot</label>
+          <label for="plot">Plot:</label>
           <input type="text" name="plot" id="Plot" required />
-          <label for="rating">Rating</label>
+          <label for="rating">Rating:</label>
           <input type="number" name="rating" id="rating" required />
-          <label for="runtime">Runtime</label>
+          <label for="runtime">Runtime:</label>
           <input type="number" name="runtime" id="runtime" required />
-          <label for="year">Year</label>
+          <label for="year">Year:</label>
           <input type="number" name="year" id="year" required />
-          <button type="submit">Add</button>
+          <div class="btn-container">
+            <button type="submit">Submit</button>
+          </div>
         </form>
       </section>
 
-      <!-- use javascript to implement these part of the code -->
-      <section></section>
+      <!-- use javascript to populate movie data on these part of the code -->
+      <section class="movie-list">
+        <i class="fa-solid fa-xmark"></i>
+      </section>
 
       <!-- footer section of the code -->
       <footer class="fa-3x">
