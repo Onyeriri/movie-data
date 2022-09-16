@@ -144,13 +144,14 @@ nav {
   margin: 0 0 0 0.5em;
 }
 
-section.add-section {
+.add-section {
   width: 100%;
   background-color: greenyellow;
   padding: 1em 0.2em;
   border: 3px solid gold;
   border-radius: 15px;
   margin: 0 0 1em 0;
+  display: none;
 }
 
 .cancel-container {
@@ -183,6 +184,7 @@ section .add-movie {
   width: 100%;
   border: 3px solid gold;
   border-radius: 10px;
+  padding: 0.5em;
 }
 
 .add-movie button {
@@ -199,16 +201,13 @@ section .add-movie {
 }
 
 .movie-list {
-  background-color: aquamarine;
-  border: 3px solid gold;
   border-radius: 15px;
-  margin: 2em 0 0 0;
   padding: 1em;
 }
 
 footer {
   background-color: #202a25;
-  margin: 1em 0 0 0;
+  margin: 0.5em 0 0 0;
 }
 
 footer ul {
@@ -222,6 +221,37 @@ footer ul {
 footer > ul > li > a > i {
   color: #fff;
 }
+
+.movie-list-li {
+  border: 3px solid green;
+  border-radius: 10px;
+  padding: 0.5em;
+  margin: 1em 0;
+}
+
+.movie-list p {
+  letter-spacing: 0.2em;
+  font-family: "Dosis", sans-serif;
+  font-weight: 600;
+  margin: 0.5em 0;
+  color: #000;
+}
+
+.none {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.add-movie-btn:hover,
+.btn:hover {
+  background-color: #2f4550;
+  border-color: #2f4550;
+  color: #fff;
+}
+
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
 }
