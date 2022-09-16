@@ -1,11 +1,22 @@
 import movieData from "../movieStore.js";
 
-// movieData["Mission Impossible Part 2"] = mission["Mission Impossible Part 2"];
-
+// creation and initialization of variables
 const submitBtn = document.getElementById("submit-btn");
+const iClose = document.getElementById("close");
+const addSection = document.getElementById("show-card");
+const addBtn = document.getElementById("add-btn");
+const ul = document.getElementById("under-list");
+const MovieArray = Object.values(movieData);
+const MovieNames = Object.keys(movieData);
 
-const displayMovies = ({ cast, plot, rating, runtime, year }, title) => {
+// function that handles displaying of movies on the webpage
+const displayMovies = (
+  { cast, plot, rating, runtime, year },
+  title,
+  span = ""
+) => {
   let ul = document.getElementById("under-list");
+  let section = document.getElementById("show-list");
 
   let h1Title = document.createElement("h1");
   let pCast = document.createElement("p");
@@ -14,7 +25,6 @@ const displayMovies = ({ cast, plot, rating, runtime, year }, title) => {
   let pRuntime = document.createElement("p");
   let pYear = document.createElement("p");
   let li = document.createElement("li");
-  let div = document.createElement("div");
 
   h1Title.innerHTML = title;
   pCast.innerHTML = "Cast:" + cast.map((value) => " " + value);
@@ -32,11 +42,28 @@ const displayMovies = ({ cast, plot, rating, runtime, year }, title) => {
 
   li.classList.add("movie-list-li");
 
-  ul.appendChild(li);
+  if (section.contains(ul)) {
+    ul.appendChild(li);
+  } else {
+    if (
+      title !== "" &&
+      plot !== "" &&
+      cast !== "" &&
+      runtime !== "" &&
+      rating !== "" &&
+      year !== ""
+    ) {
+      span.appendChild(li);
+      section.appendChild(span);
+    }
+  }
 };
 
+// function that handles user inputs on their favorite movies
 submitBtn.addEventListener("click", (event) => {
   event.preventDefault();
+  const ul = document.createElement("ul");
+  ul.setAttribute("id", "delete-ul");
 
   const title = document.getElementById("name").value;
   const cast = document.getElementById("cast").value;
@@ -62,33 +89,36 @@ submitBtn.addEventListener("click", (event) => {
   const MovieArray = Object.values(movieData);
   const MovieNames = Object.keys(movieData);
 
+  const oldUl = document.getElementById("under-list");
   const section = document.getElementById("show-list");
-  const ul = document.getElementById("under-list");
+
+  if (section.contains(oldUl)) {
+    oldUl.remove();
+  } else {
+    const section = document.getElementById("delete-ul");
+    section.remove();
+  }
 
   MovieArray.map((value, key) => {
-    ul.remove();
-    section.appendChild(ul);
-    displayMovies(value, MovieNames[key]);
+    displayMovies(value, MovieNames[key], ul);
   });
 });
 
-const MovieArray = Object.values(movieData);
-const MovieNames = Object.keys(movieData);
-
+// iterating through the movie object
 MovieArray.map((value, key) => {
   displayMovies(value, MovieNames[key]);
 });
 
-const iClose = document.getElementById("close");
-const addSection = document.getElementById("show-card");
-const addBtn = document.getElementById("add-btn");
-
+// function that handles closing of movie form
 iClose.addEventListener("click", () => {
   addSection.classList.remove("show");
   addSection.classList.add("none");
+  ul.classList.remove("none");
 });
 
+// function that handles opening movie form
 addBtn.addEventListener("click", () => {
   addSection.classList.remove("none");
   addSection.classList.add("show");
+  ul.classList.add("none");
 });
