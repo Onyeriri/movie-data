@@ -99,13 +99,15 @@ header {
   padding: 0 0 0.5em 0;
 }
 
-header h1 {
+header h1,
+.search-header {
   font-family: "Anton", sans-serif;
   letter-spacing: 0.3em;
   font-weight: 100;
 }
 
-header p {
+header p,
+.search-para {
   font-family: "Dosis", sans-serif;
   letter-spacing: 0.2em;
   font-weight: 600;
@@ -124,6 +126,7 @@ nav {
 
 .form-container {
   margin: 0 0 1em 0;
+  width: 90%;
 }
 
 .input-filed,
@@ -136,8 +139,11 @@ nav {
 }
 
 .btn {
-  margin: 0 0 0 -9em;
-  width: 10em;
+  width: 90%;
+}
+
+#search-form .input-filed {
+  width: 80%;
 }
 
 .form-container form button {
@@ -252,8 +258,84 @@ footer > ul > li > a > i {
   color: #fff;
 }
 
+.result-class {
+  border: 3px solid gold;
+  padding: 1em;
+  margin: 2em 0;
+}
+
+.search-card {
+  width: 100%;
+  background-color: brown;
+  border: 3px solid gold;
+  border-radius: 10px;
+  padding: 1em;
+}
+
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 550px) {
+  .container {
+    width: 100%;
+  }
+
+  header {
+    width: 100%;
+    padding: 1em 0 2em 0;
+  }
+
+  header h1,
+  .search-header {
+    letter-spacing: 0.8em;
+    font-weight: 400;
+  }
+
+  header p,
+  .search-para {
+    letter-spacing: 0.25em;
+  }
+
+  nav {
+    width: 100%;
+    padding: 1em;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .form-container {
+    margin: 0;
+  }
+
+  .search-card {
+    width: 95%;
+    background-color: brown;
+    border: 3px solid gold;
+    border-radius: 10px;
+    padding: 1em;
+    margin: 0 auto;
+  }
+
+  header h1,
+  .search-header {
+    letter-spacing: 0.2em;
+    font-weight: 100;
+    text-align: center;
+  }
+
+  header p,
+  .search-para {
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    text-align: center;
+    padding: 0 0 1em 0;
+  }
+
+  .btn {
+    width: 40%;
+  }
+
+  #search-form .input-filed {
+    width: 50%;
+  }
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -263,7 +345,89 @@ footer > ul > li > a > i {
 /* @media only screen and (min-width: 600px) {...} */
 
 /* Medium devices (landscape tablets, 768px and up) */
-/* @media only screen and (min-width: 768px) {...} */
+@media only screen and (min-width: 768px) {
+  header {
+    width: 100%;
+    padding: 1em 0 2em 0;
+  }
+
+  header h1,
+  .search-header {
+    letter-spacing: 1em;
+    font-weight: 400;
+    font-size: 1.9em;
+  }
+
+  header p,
+  .search-para {
+    letter-spacing: 0.25em;
+    font-size: 1.3em;
+  }
+
+  nav {
+    width: 80%;
+    padding: 1em;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  .form-container {
+    margin: 0;
+    width: 60%;
+  }
+
+  .search-card {
+    width: 80%;
+    background-color: brown;
+    border: 3px solid gold;
+    border-radius: 10px;
+    padding: 1em;
+    margin: 0 auto;
+  }
+
+  header h1,
+  .search-header {
+    letter-spacing: 0.2em;
+    font-weight: 100;
+    text-align: center;
+    line-height: 1.2em;
+  }
+
+  header p,
+  .search-para {
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    text-align: center;
+    padding: 0 0 1em 0;
+  }
+
+  .movie-list {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .add-section {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  #show-card {
+    margin-top: 2em;
+  }
+
+  #search-section {
+    margin-top: 2em;
+  }
+
+  #search-form .input-filed {
+    width: 60%;
+  }
+
+  .btn {
+    width: 20%;
+  }
+}
 
 /* Large devices (laptops/desktops, 992px and up) */
 /* @media only screen and (min-width: 992px) {...} */

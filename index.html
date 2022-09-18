@@ -40,26 +40,35 @@
       <!-- navigation section of the code -->
       <nav>
         <div class="form-container">
-          <form action="">
+          <form id="search-form">
             <input
               class="input-filed"
               type="text"
               name="title"
-              id="title"
+              id="search-value"
               placeholder="search movies by date"
             />
-            <button class="add-movie-btn" type="submit">search</button>
+            <button id="search-btn" class="add-movie-btn" type="submit">
+              search
+            </button>
           </form>
         </div>
         <button id="add-btn" class="btn">Add a movie</button>
       </nav>
+
+      <!-- search result populated from javascript -->
+      <section id="search-section" class="search-card none">
+        <div class="cancel-container">
+          <i id="cancel-btn-id" class="cancel fa-solid fa-xmark fa-2x"></i>
+        </div>
+      </section>
 
       <!-- add more movies to the movie data store -->
       <section id="show-card" class="add-section">
         <div class="cancel-container">
           <i id="close" class="cancel fa-solid fa-xmark fa-2x"></i>
         </div>
-        <form class="add-movie" action="">
+        <form class="add-movie" id="movie-form">
           <label for="name">Title:</label>
           <input type="text" name="name" id="name" value="" required />
           <label for="cast">Cast:</label>
