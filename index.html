@@ -30,13 +30,12 @@
     <title>Movie Data</title>
   </head>
   <body>
+    <header>
+      <h1>Movie Data</h1>
+      <p>Your favorite movies on display: for your viewing pleasure.</p>
+    </header>
     <!-- main container -->
     <div class="container">
-      <header>
-        <h1>Movie Data</h1>
-        <p>Your favorite movies on display: for your viewing pleasure.</p>
-      </header>
-
       <!-- navigation section of the code -->
       <nav>
         <div class="form-container">
@@ -76,7 +75,7 @@
           <label for="plot">Plot:</label>
           <input type="text" name="plot" id="plot" value="" required />
           <label for="rating">Rating:</label>
-          <input type="number" name="rating" id="rating" value="" required />
+          <input type="text" name="rating" id="rating" value="" required />
           <label for="runtime">Runtime:</label>
           <input type="number" name="runtime" id="runtime" value="" required />
           <label for="year">Year:</label>
@@ -93,34 +92,32 @@
       <section id="show-list" class="movie-list">
         <ul id="under-list"></ul>
       </section>
-
-      <!-- footer section of the code -->
-      <footer class="fa-3x">
-        <ul>
-          <li>
-            <a href="#">
-              <i class="fa-brands fa-facebook"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-          </li>
-        </ul>
-      </footer>
     </div>
-
+    <!-- footer section of the code -->
+    <footer class="fa-3x">
+      <ul>
+        <li>
+          <a href="#">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+        </li>
+      </ul>
+    </footer>
     <!-- script section of the code -->
     <script type="module" src="/script/script.js"></script>
   </body>
