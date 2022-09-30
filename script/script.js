@@ -66,15 +66,27 @@ const displayMovies = (
 // function that handles user inputs on their favorite movies
 submitBtn.addEventListener("click", (event) => {
   event.preventDefault();
+
   const ul = document.createElement("ul");
   ul.setAttribute("id", "delete-ul");
 
-  const title = document.getElementById("name").value;
-  const cast = document.getElementById("cast").value;
-  const plot = document.getElementById("plot").value;
-  const rating = document.getElementById("rating").value;
-  const runtime = document.getElementById("runtime").value;
-  const year = document.getElementById("year").value;
+  const title = document.getElementById("name").value.trim();
+  const cast = document.getElementById("cast").value.trim();
+  const plot = document.getElementById("plot").value.trim();
+  const rating = document.getElementById("rating").value.trim();
+  const runtime = document.getElementById("runtime").value.trim();
+  const year = document.getElementById("year").value.trim();
+
+  if (
+    title === "" &&
+    cast === "" &&
+    plot === "" &&
+    rating === "" &&
+    runtime === "" &&
+    year === ""
+  ) {
+    return;
+  }
 
   const singleMovie = {
     plot: plot,
@@ -156,10 +168,15 @@ searchBtn.addEventListener("click", (event) => {
 
   const searchValue = document.getElementById("search-value");
   const searchSection = document.getElementById("search-section");
+  const searchForm = document.getElementById("search-form");
   const div = document.createElement("div");
   const h1 = document.createElement("h1");
   const p = document.createElement("p");
   const divInfo = document.createElement("div");
+
+  if (searchValue.value.trim() === "") {
+    return;
+  }
 
   divInfo.classList.add("info");
   div.classList.add("sign");
@@ -175,7 +192,8 @@ searchBtn.addEventListener("click", (event) => {
 
   if (searchValue.value !== "") {
     console.log("Hello");
-    valueTransform = capitalizeFirstWord(searchValue.value.trim());
+    let result = searchValue.value.trim();
+    valueTransform = capitalizeFirstWord(result.toLowerCase());
   }
 
   if (movieData[valueTransform]) {
@@ -191,6 +209,10 @@ searchBtn.addEventListener("click", (event) => {
     div.appendChild(h1);
     div.appendChild(p);
     searchSection.appendChild(div);
+    // test 1
+    searchSection.classList.remove("none");
+    searchSection.classList.add("show");
+    searchForm.reset();
   } else {
     const elements = document.getElementsByClassName("sign");
     const elementsInfo = document.getElementsByClassName("info");
@@ -207,5 +229,6 @@ searchBtn.addEventListener("click", (event) => {
     ul.classList.remove("none");
     ul.classList.add("show");
     searchSection.appendChild(divInfo);
+    searchForm.reset();
   }
 });

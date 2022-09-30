@@ -95,8 +95,8 @@ header {
   background-color: #202a25;
   color: #fff;
   text-align: center;
-  margin: 1em 0 2em 0;
-  padding: 0 0 0.5em 0;
+  margin: 0 0 2em 0;
+  padding: 1em 0;
 }
 
 header h1,
@@ -115,7 +115,6 @@ header p,
 
 nav {
   width: 100%;
-  background-color: red;
   display: flex;
   margin: 0 0 2em 0;
   padding: 1em 0;
@@ -133,7 +132,7 @@ nav {
 .form-container form button,
 .btn {
   padding: 0.5em;
-  border: 3px solid gold;
+  border: 3px solid #48483a;
   border-radius: 10px;
   background-color: #fff;
 }
@@ -152,12 +151,13 @@ nav {
 
 .add-section {
   width: 100%;
-  background-color: greenyellow;
+  background-color: #48483a;
   padding: 1em 0.2em;
-  border: 3px solid gold;
+  border: 3px solid #48483a;
   border-radius: 15px;
   margin: 0 0 1em 0;
   display: none;
+  color: #fff;
 }
 
 .cancel-container {
@@ -167,7 +167,7 @@ nav {
 }
 
 .cancel {
-  color: #000;
+  color: #fff;
   cursor: pointer;
 }
 
@@ -188,7 +188,7 @@ section .add-movie {
 
 .add-movie input {
   width: 100%;
-  border: 3px solid gold;
+  border: 3px solid #48483a;
   border-radius: 10px;
   padding: 0.5em;
 }
@@ -196,7 +196,7 @@ section .add-movie {
 .add-movie button {
   width: 60%;
   margin: 1em 0 0 0;
-  border: 3px solid gold;
+  border: 3px solid #48483a;
   border-radius: 10px;
   padding: 0.5em;
   background-color: #fff;
@@ -229,7 +229,7 @@ footer > ul > li > a > i {
 }
 
 .movie-list-li {
-  border: 3px solid green;
+  border: 3px solid #48483a;
   border-radius: 10px;
   padding: 0.5em;
   margin: 1em 0;
@@ -259,17 +259,18 @@ footer > ul > li > a > i {
 }
 
 .result-class {
-  border: 3px solid gold;
+  border: 3px solid #2f4550;
   padding: 1em;
   margin: 2em 0;
 }
 
 .search-card {
   width: 100%;
-  background-color: brown;
-  border: 3px solid gold;
+  background-color: #2f4550;
+  border: 3px solid #2f4550;
   border-radius: 10px;
   padding: 1em;
+  color: #fff;
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -307,8 +308,6 @@ footer > ul > li > a > i {
 
   .search-card {
     width: 95%;
-    background-color: brown;
-    border: 3px solid gold;
     border-radius: 10px;
     padding: 1em;
     margin: 0 auto;
@@ -379,8 +378,6 @@ footer > ul > li > a > i {
 
   .search-card {
     width: 80%;
-    background-color: brown;
-    border: 3px solid gold;
     border-radius: 10px;
     padding: 1em;
     margin: 0 auto;
@@ -426,6 +423,10 @@ footer > ul > li > a > i {
 
   .btn {
     width: 20%;
+  }
+
+  footer ul {
+    width: 40%;
   }
 }
 
