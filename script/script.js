@@ -191,7 +191,6 @@ searchBtn.addEventListener("click", (event) => {
   let valueTransform;
 
   if (searchValue.value !== "") {
-    console.log("Hello");
     let result = searchValue.value.trim();
     valueTransform = capitalizeFirstWord(result.toLowerCase());
   }
