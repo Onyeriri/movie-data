@@ -142,7 +142,7 @@ nav {
 }
 
 #search-form .input-filed {
-  width: 80%;
+  width: 74%;
 }
 
 .form-container form button {
@@ -427,6 +427,18 @@ footer > ul > li > a > i {
 
   footer ul {
     width: 40%;
+  }
+}
+
+@media only screen and (min-width: 375px) {
+  #search-form .input-filed {
+    width: 78%;
+  }
+}
+
+@media only screen and (min-width: 425px) {
+  #search-form .input-filed {
+    width: 80%;
   }
 }
 
