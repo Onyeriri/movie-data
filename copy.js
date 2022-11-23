@@ -11,8 +11,15 @@ const search = document.getElementById("search-section");
 const addBtn = document.getElementById("add-btn");
 const ul = document.getElementById("under-list");
 const searchElement = document.getElementById("search-value");
-const newObject = Object.entries(movieData);
+// const MovieArray = Object.values(movieData);
+// const MovieNames = Object.keys(movieData);
 
+let userInput = "";
+// get user input
+searchElement.addEventListener("keyup", () => {
+  userInput = searchElement.value;
+  console.log(userInput);
+});
 // function that handles displaying of movies on the webpage
 const displayMovies = (
   { cast, plot, rating, runtime, year },
@@ -102,10 +109,8 @@ submitBtn.addEventListener("click", (event) => {
 
   movieData[title] = mission[title];
 
-  // const MovieArray = Object.values(movieData);
-  // const MovieNames = Object.keys(movieData);
-
-  const convertedObj = Object.entries(movieData);
+  const MovieArray = Object.values(movieData);
+  const MovieNames = Object.keys(movieData);
 
   const oldUl = document.getElementById("under-list");
   const section = document.getElementById("show-list");
@@ -117,15 +122,33 @@ submitBtn.addEventListener("click", (event) => {
     section.remove();
   }
 
-  convertedObj.map((value) => {
-    displayMovies(value[1], value[0], ul);
+  MovieArray.map((value, key) => {
+    displayMovies(value, MovieNames[key], ul);
   });
 
   movieForm.reset();
 });
 
+// new search
+// const filteredMovies = MovieArray.filter((movie) => console.log(movie));
+
+// // iterating through the movie object
+// MovieArray.map((value, key) => {
+//   displayMovies(value, MovieNames[key]);
+// });
+
+// new search functionality
+const newObject = Object.entries(movieData);
+const searchOject = Object.entries(movieData);
+const searchedResult = searchOject.filter(
+  (data) => data[0].indexOf("the") !== -1
+);
+console.log(searchedResult);
+
+const displayResult = searchedResult.length !== 0 ? searchedResult : newObject;
+
 // new iteration
-newObject.map((value) => {
+displayResult.map((value) => {
   displayMovies(value[1], value[0]);
 });
 
@@ -153,34 +176,86 @@ addBtn.addEventListener("click", () => {
   ul.classList.add("none");
 });
 
-// new search
-searchElement.addEventListener("keyup", (e) => {
-  const userInput = searchElement.value;
-  const arrObject = Object.entries(movieData);
-  const oldUl = document.getElementById("under-list");
-  const newUl = document.getElementById("delete-ul");
-  let ul = document.createElement("ul");
-  const section = document.getElementById("show-list");
-  const li = document.getElementsByClassName("movie-list-li");
-  const arrLi = Array.prototype.slice.call(li);
+// function that transforms first letter of every words in a string
+const capitalizeFirstWord = (value) => {
+  value = value.split(" ");
 
-  const filteredResults = arrObject.filter(
-    (obj) => obj[0].toLowerCase().indexOf(userInput.toLowerCase().trim()) !== -1
-  );
-
-  if (section.contains(oldUl)) {
-    arrLi.map((arr) => arr.remove());
+  for (var i = 0, x = value.length; i < x; i++) {
+    value[i] = value[i][0].toUpperCase() + value[i].substr(1);
   }
 
-  if (section.contains(newUl)) {
-    arrLi.map((arr) => arr.remove());
+  return value.join(" ");
+};
+
+// search functionality
+searchBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  const searchSection = document.getElementById("search-section");
+  const searchForm = document.getElementById("search-form");
+  const div = document.createElement("div");
+  const h1 = document.createElement("h1");
+  const p = document.createElement("p");
+  const divInfo = document.createElement("div");
+
+  if (searchValue.value.trim() === "") {
+    return;
   }
 
-  if (section.contains(ul)) {
-    arrLi.map((arr) => arr.remove());
+  divInfo.classList.add("info");
+  div.classList.add("sign");
+
+  div.classList.add("result-class");
+  h1.classList.add("search-header");
+  p.classList.add("search-para");
+
+  addSection.classList.remove("show");
+  addSection.classList.add("none");
+
+  let valueTransform;
+
+  if (searchValue.value !== "") {
+    let result = searchValue.value.trim();
+    valueTransform = capitalizeFirstWord(result.toLowerCase());
   }
 
-  filteredResults.map((result) => {
-    displayMovies(result[1], result[0], ul);
-  });
+  if (movieData[valueTransform]) {
+    const elements = document.getElementsByClassName("info");
+    const oldElements = document.getElementsByClassName("sign");
+    const arr = Array.prototype.slice.call(elements);
+    const arrOld = Array.prototype.slice.call(oldElements);
+    arrOld.map((value) => value.remove());
+    arr.map((value) => value.remove());
+    console.log(arr);
+    h1.innerHTML = valueTransform;
+    p.innerText = "Year of publication: " + movieData[valueTransform].year;
+    div.appendChild(h1);
+    div.appendChild(p);
+    searchSection.appendChild(div);
+    // test 1
+    searchSection.classList.remove("none");
+    searchSection.classList.add("show");
+    searchForm.reset();
+  } else {
+    const elements = document.getElementsByClassName("sign");
+    const elementsInfo = document.getElementsByClassName("info");
+    const arr = Array.prototype.slice.call(elements);
+    const arrInfo = Array.prototype.slice.call(elementsInfo);
+    arr.map((value) => value.remove());
+    arrInfo.map((value) => value.remove());
+    h1.innerHTML = "Movie not found in our movies store check later";
+    p.innerText = "Your can add movies to our store using the add movie button";
+    divInfo.appendChild(h1);
+    divInfo.appendChild(p);
+    searchSection.classList.add("show");
+    searchSection.classList.remove("none");
+    ul.classList.remove("none");
+    ul.classList.add("show");
+    searchSection.appendChild(divInfo);
+    searchForm.reset();
+  }
 });
+
+// const see = Object.entries(movieData);
+// const newArr = see.filter((data) => data[0].indexOf("The") !== -1);
+// console.log(newArr);
