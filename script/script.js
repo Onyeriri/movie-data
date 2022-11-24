@@ -76,6 +76,8 @@ submitBtn.addEventListener("click", (event) => {
   const rating = document.getElementById("rating").value.trim();
   const runtime = document.getElementById("runtime").value.trim();
   const year = document.getElementById("year").value.trim();
+  const deleteUL = document.getElementsByClassName("delete");
+  const deleteClass = document.querySelector(".delete");
 
   if (
     title === "" &&
@@ -106,6 +108,7 @@ submitBtn.addEventListener("click", (event) => {
   // const MovieNames = Object.keys(movieData);
 
   const convertedObj = Object.entries(movieData);
+  const deleteExistingUL = Array.prototype.slice.call(deleteUL);
 
   const oldUl = document.getElementById("under-list");
   const section = document.getElementById("show-list");
@@ -115,6 +118,12 @@ submitBtn.addEventListener("click", (event) => {
   } else {
     const section = document.getElementById("delete-ul");
     section.remove();
+  }
+
+  console.log(deleteClass, deleteUL);
+
+  if (section.contains(deleteClass)) {
+    deleteExistingUL.map((arr) => arr.remove());
   }
 
   convertedObj.map((value) => {
@@ -163,6 +172,8 @@ searchElement.addEventListener("keyup", (e) => {
   const section = document.getElementById("show-list");
   const li = document.getElementsByClassName("movie-list-li");
   const arrLi = Array.prototype.slice.call(li);
+
+  ul.classList.add("delete");
 
   const filteredResults = arrObject.filter(
     (obj) => obj[0].toLowerCase().indexOf(userInput.toLowerCase().trim()) !== -1
